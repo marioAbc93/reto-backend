@@ -1,7 +1,6 @@
-<p align="center">Reto de creación de billetera virtual</p>
+## Reto de creacion de billetera virtual
 
-<p align="center">Creación de servicios Rest y un servicio SOAP que servira de puente entre cliente y sevidor
-</p>
+Creación de servicios Rest y un servicio SOAP que servira de puente entre cliente y sevidor
 
 ## Funciones
 
@@ -15,32 +14,34 @@ Los servicios Rest fueron desarrollados en Laravel 8.
 
 ## La Base de datos
 
+- La base de datos es <strong>MySQL</strong>.
+- Se utilizó <strong>ELOQUENT ORM</strong>
+
 Se crearon dos entidades (Modelos), con sus respectivas migraciones donde se le dan parametros especificos a cada campo para cumplir con lo solicitado en el reto.
 
 Las entidades son <strong> User </strong> donde registramos todos los datos del "usuario final" y la entidad <strong> Wallet</strong>
 <img src="/public/base-de-datos.png">
 
-## Laravel Sponsors
+## Controladores
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Se crearon dos controladores: 
+ - UserController   : en este se registran los datos del usuario
+ - WalletController : en este se recarga dinero, se consulta saldo y se paga desde la billetera
 
-### Premium Partners
+<strong>NOTA:</strong> Cada metodo dentro del controlador tiene dentro la descripción de lo que realiza la logica que lo compone, así mismo, se describe en el archivo <strong>api.php</strong> ubicado en <strong>routes/api.php</strong> que solicitud resuelve cada ruta.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+### Cliente web
 
-## Contributing
+El cliente web que se utilizó para enviar los parametros fue hecho con postman. La colección se encuentra aquí:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Envio de correos electronicos
+
+En el servicio REST que hace una compra, luego de guardas los datos la variable $mail, que crea el mailable, recibe como parametro los datos guardados en $wallet y estos son llevados a la plantilla del correo electronico por medio del constructor del mailable. 
+
+Notas: 
+- El servicio rest que envia el correo es el mismo que envia el mail.
+- El archivo de plantilla de correo electronico puede ser encontrado en /resource/views/email/confirmacion.blade.php
 
 ## Code of Conduct
 

@@ -11,6 +11,8 @@ use Carbon\Carbon;
 use Crypt;
 use DB;
 use JWTAuth;
+use App\Mail\ConfirmacionMailable;
+use Mail;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 class WalletController extends Controller
@@ -107,8 +109,9 @@ class WalletController extends Controller
         try{
             //Recibo todos los datos del formulario y el campo "tipo" lo guardo por defecto
             //con el tipo "PENDIENTE" para confirmar el pago con otro servicio donde se 
-            //requerirá el token y el id de sesión
-            $data    = $request->all();      
+            //requerirá el token y el id de sesión 
+            $data    = $request->all(); 
+                 
             $wallet = new Wallet();       
             $wallet->amout    = $data["amout"];
             $wallet->document = $data["document"];
@@ -117,7 +120,9 @@ class WalletController extends Controller
             $wallet->token    = Str::random(6);
             $wallet->sesion   = Str::random(4);
             $wallet->save();
-
+            //Enviamos el correo electronico con el token y el id de sesión
+            $mail = new ConfirmacionMailable($wallet);
+            Mail::to('mail@example.com')->send($mail);
             return JsonResponse::create(array('message' =>"Listo, ahora enviaremos un correo con el token y el id de sesión para confirmar esta compra..", "isError"=>false, "isFail"=>false, "isOk"=>true), 200);
 
         }catch (Exception $exc) {
