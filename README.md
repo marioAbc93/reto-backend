@@ -18,7 +18,7 @@ Los servicios Rest fueron desarrollados en Laravel 8.
 Se crearon dos entidades (Modelos), con sus respectivas migraciones donde se le dan parametros especificos a cada campo para cumplir con lo solicitado en el reto.
 
 Las entidades son <strong> User </strong> donde registramos todos los datos del "usuario final" y la entidad <strong> Wallet</strong>
-<img src="{{ ('public/base-de-datos.png') }}">
+<img src="/public/base-de-datos.png">
 
 ## Laravel Sponsors
 
