@@ -48,7 +48,7 @@ Notas:
 
 http://127.0.0.1:8000/index.php/user/?wsdl
 
-## Security Vulnerabilities
+## Cliente web - Postman
 
 Se creó un cliente web para enviar los parametros y probar la funcionalidad de cada servicio rest. 
 En el encontrarán el titulo de cada una de las funcionalidades 
@@ -57,7 +57,7 @@ Notas:
 - para probar la consulta de saldo es necesario que se ingrese el mismo numero de identificacion (´document') que se ha ingresado para recargar la billetera, de lo contrario, no funcionará.
 - para probar la funcionalidad del email se debe estar logueado en mailtrap tal como lo explicamos en la seccion donde documentamos la funcionalidad del envio de emails
 
-https://www.getpostman.com/collections/18eaddb066cbebcc4ff1
+link de la coleccion "reto": https://www.getpostman.com/collections/18eaddb066cbebcc4ff1
 
 ## License
 
