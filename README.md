@@ -42,14 +42,22 @@ En el servicio REST que hace una compra, luego de guardas los datos la variable 
 Notas: 
 - El servicio rest que envia el correo es el mismo que envia el mail.
 - El archivo de plantilla de correo electronico puede ser encontrado en /resource/views/email/confirmacion.blade.php
+- Para probar esta funcionalidad debe adecuar las variavles del archivo .env cambiando los datos que se encuentran por defecto y colocando los que proporciona mailtrap.io
 
-## Code of Conduct
+## Servicio SOAP
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+http://127.0.0.1:8000/index.php/user/?wsdl
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Se creó un cliente web para enviar los parametros y probar la funcionalidad de cada servicio rest. 
+En el encontrarán el titulo de cada una de las funcionalidades 
+
+Notas: 
+- para probar la consulta de saldo es necesario que se ingrese el mismo numero de identificacion (´document') que se ha ingresado para recargar la billetera, de lo contrario, no funcionará.
+- para probar la funcionalidad del email se debe estar logueado en mailtrap tal como lo explicamos en la seccion donde documentamos la funcionalidad del envio de emails
+
+https://www.getpostman.com/collections/18eaddb066cbebcc4ff1
 
 ## License
 

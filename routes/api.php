@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
-
+use App\Http\Controllers\SoapController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,8 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('user', [UserController::class, 'store']);
-
+Route::post('user',       [SoapController::class, 'registrarUsuario']);
 Route::post('recarga',   [WalletController::class, 'recarga']);
 Route::post('saldo',     [WalletController::class, 'index']);
 Route::post('pagar',     [WalletController::class, 'pagar']);
 Route::post('confirmar', [WalletController::class, 'confirmar']);
+
